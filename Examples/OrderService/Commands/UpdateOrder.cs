@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using EventHorizon;
+using MediatR;
 using OrderService.Context;
 
 namespace OrderService.Commands;
@@ -9,7 +10,7 @@ public class UpdateOrderCommand : IRequest<Order>
     public required int ProductId { get; set; }
     public required string Instructions { get; set; }
 }
-
+[Handler<UpdateOrderCommand>(Description: "Update an order")]
 public class UpdateOrderCommandHandler(OrderServiceContext context) : IRequestHandler<UpdateOrderCommand, Order>
 {
     private readonly OrderServiceContext _context = context;

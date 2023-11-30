@@ -1,5 +1,8 @@
-﻿using MediatR;
+﻿using EventHorizon;
+using MassTransit;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Shared.Events;
 using UserService.Context;
 
 namespace UserService.Commands;
@@ -14,7 +17,9 @@ public class UpdateUserCommand : IRequest<User>
     public string? City { get; set; }
 }
 
-public class UpdateUserCommandHandler(UserServiceContext context) : IRequestHandler<UpdateUserCommand, User>
+[Handler<UpdateUserCommand>(Description: "Update user properties")]
+[Produces<UserEmailChangedEvent>(Condition: "If the email was deviant")]
+public class UpdateUserCommandHandler(UserServiceContext context, IPublishEndpoint publishEndpoint) : IRequestHandler<UpdateUserCommand, User>
 {
     private readonly UserServiceContext _context = context;
 
@@ -36,6 +41,7 @@ public class UpdateUserCommandHandler(UserServiceContext context) : IRequestHand
             {
                 throw new Exception("Email already in use.");
             }
+            await publishEndpoint.Publish(new UserEmailChangedEvent { Id = user.Id, Email = user.Email }, cancellationToken);
         }
 
         user.Email = request.Email;

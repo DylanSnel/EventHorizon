@@ -1,4 +1,4 @@
-﻿using EventHorizon.Abstractions;
+﻿using EventHorizon;
 using MailService.Context;
 using MailService.Services;
 using MediatR;
@@ -6,7 +6,7 @@ using Shared.Events;
 
 namespace MailService.Users.Events;
 
-[Handler]
+[Handler<UserEmailChangedEvent>]
 public class UserEmailChangedHander(IMailService mailService, MailServiceContext context) : INotificationHandler<UserEmailChangedEvent>
 {
     public async Task Handle(UserEmailChangedEvent request, CancellationToken cancellationToken)

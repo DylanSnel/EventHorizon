@@ -1,10 +1,13 @@
-﻿using MassTransit;
+﻿using EventHorizon;
+using MassTransit;
 using MediatR;
 using Shared.Commands;
 using Shared.Events;
 using UserService.Context;
 
 namespace UserService.Commands;
+[Handler<DeleteUserCommand>(Description: "Delete a user")]
+[Produces<UserDeletedEvent>]
 public class DeleteUserCommandHandler(UserServiceContext context, IPublishEndpoint publishEndpoint) : IRequestHandler<DeleteUserCommand>
 {
     public async Task Handle(DeleteUserCommand request, CancellationToken cancellationToken)

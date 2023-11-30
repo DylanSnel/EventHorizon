@@ -1,10 +1,12 @@
-﻿using MailService.Context;
+﻿using EventHorizon;
+using MailService.Context;
 using MailService.Services;
 using MediatR;
 using Shared.Events;
 
 namespace MailService.Users.Events;
 
+[Handler<UserDeletedEvent>(Description: "Delete contact and send deletion confirmation mail")]
 public class UserDeletedHander(IMailService mailService, MailServiceContext context) : INotificationHandler<UserDeletedEvent>
 {
     public async Task Handle(UserDeletedEvent request, CancellationToken cancellationToken)

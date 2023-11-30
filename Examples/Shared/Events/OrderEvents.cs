@@ -11,7 +11,6 @@ public class OrderConfirmedEvent : INotification
 
 public class OrderFailedEvent : INotification
 {
-    public required int Id { get; set; }
     public required int UserId { get; set; }
-    public required int ProductIt { get; set; }
+    public required int ProductId { get; set; }
 }
