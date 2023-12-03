@@ -9,13 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{F4
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserService", "Examples\UserService\UserService.csproj", "{FB8B9F7B-4CBE-49F4-9C0A-F68941632C68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrivacyService", "Examples\PrivacyService\PrivacyService.csproj", "{7EC9B624-561F-4D3A-B17A-268F2960B819}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrivacyService", "Examples\PrivacyService\PrivacyService.csproj", "{7EC9B624-561F-4D3A-B17A-268F2960B819}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailService", "Examples\MailService\MailService.csproj", "{43696AFC-8FA4-4025-B0CD-3F2C91837963}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService", "Examples\OrderService\OrderService.csproj", "{F33641FB-D551-40B2-9A44-88DD40F49E19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService", "Examples\OrderService\OrderService.csproj", "{F33641FB-D551-40B2-9A44-88DD40F49E19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Examples\Shared\Shared.csproj", "{7CEF3CA3-258C-4AF8-9958-BE33B9401A9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Examples\Shared\Shared.csproj", "{7CEF3CA3-258C-4AF8-9958-BE33B9401A9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHorizon", "EventHorizon\EventHorizon.csproj", "{DC5BCF76-4EE7-4D22-AE52-A1FD9F698B56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{7CEF3CA3-258C-4AF8-9958-BE33B9401A9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CEF3CA3-258C-4AF8-9958-BE33B9401A9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CEF3CA3-258C-4AF8-9958-BE33B9401A9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC5BCF76-4EE7-4D22-AE52-A1FD9F698B56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC5BCF76-4EE7-4D22-AE52-A1FD9F698B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC5BCF76-4EE7-4D22-AE52-A1FD9F698B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC5BCF76-4EE7-4D22-AE52-A1FD9F698B56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

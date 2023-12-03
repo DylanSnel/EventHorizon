@@ -1,5 +1,7 @@
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using UserService.Consumers;
 using UserService.Context;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,21 @@ builder.Services.AddSwaggerGen();
 // Add Entity Framework Core with In-Memory Database
 builder.Services.AddDbContext<UserServiceContext>(options =>
     options.UseInMemoryDatabase("UserServiceDatabase"));
+
+builder.Services.AddMassTransit(x =>
+{
+    x.AddActivitiesFromNamespaceContaining<DeleteUserConsumer>();
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host("localhost", "/", h =>
+        {
+            h.Username("guest");
+            h.Password("guest");
+        });
+
+        cfg.ConfigureEndpoints(context);
+    });
+});
 
 // Add MediatR
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));

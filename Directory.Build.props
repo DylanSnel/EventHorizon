@@ -1,7 +1,6 @@
 <Project>
   <PropertyGroup>
     <Author>Dylan Snel</Author>
-    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
