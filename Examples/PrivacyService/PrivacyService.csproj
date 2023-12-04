@@ -1,14 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <InvariantGlobalization>true</InvariantGlobalization>
+    <EventHorizon_ApplicationName>User Service</EventHorizon_ApplicationName>
+    <EventHorizon_Domain>User Management</EventHorizon_Domain>
+    <EventHorizon_GenerateSchema>true</EventHorizon_GenerateSchema>
   </PropertyGroup>
 
   <ItemGroup>
+    <!--<ProjectReference Include="..\..\EventHorizon\EventHorizon.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="true"  />-->
     <ProjectReference Include="..\Shared\Shared.csproj" />
+    <ProjectReference Include="..\..\Source\EventHorizon.Abstractions\EventHorizon.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

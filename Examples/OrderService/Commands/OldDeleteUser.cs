@@ -10,7 +10,7 @@ public class OldDeleteUserCommand : IRequest
 
 
 
-[Handler(Description: "Delete all order for userId", Tags: ["Deletion"])]
+[Handler(Description: "Delete all order for userId", Tags: ["Deletion"], Deprecated: true)]
 public class DeleteUserCommandHandler(OrderServiceContext context) : IRequestHandler<OldDeleteUserCommand>
 {
     public async Task Handle(OldDeleteUserCommand request, CancellationToken cancellationToken)

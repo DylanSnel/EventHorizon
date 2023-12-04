@@ -16,7 +16,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Source\EventHorizon.Abstractions\EventHorizon.Abstractions.csproj" />
+    <!--<ProjectReference Include="..\..\Source\EventHorizon.Abstractions\EventHorizon.Abstractions.csproj" />-->
   </ItemGroup>
 
 </Project>

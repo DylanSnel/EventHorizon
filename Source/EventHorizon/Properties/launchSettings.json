@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "EventHorizon - Userservice": {
+      "commandName": "DebugRoslynComponent",
+      "targetProject": "..\\..\\Examples\\OrderService\\OrderService.csproj"
+    }
+  }
+}

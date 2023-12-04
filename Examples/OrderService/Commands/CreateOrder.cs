@@ -13,7 +13,8 @@ public class CreateOrderCommand : IRequest<Order>
     public required string Instructions { get; set; }
 }
 
-[Handler<CreateOrderCommand>(Description: "Create an order")]
+[Handler(Description: "Create an order")]
+[StartFlow(FlowName: "CreateOrder")]
 [Produces<OrderConfirmedEvent>]
 [ProducesError<OrderConfirmedEvent>(Condition: "When the payment failed (or 1 in 5 chance)")]
 public class CreateOrderCommandHandler(OrderServiceContext context, IPublishEndpoint publishEndpoint) : IRequestHandler<CreateOrderCommand, Order>

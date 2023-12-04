@@ -1,10 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
+    <EventHorizon_ApplicationName>User Service</EventHorizon_ApplicationName>
+    <EventHorizon_Domain>User Management</EventHorizon_Domain>
+    <EventHorizon_GenerateSchema>true</EventHorizon_GenerateSchema>
   </PropertyGroup>
+
+  <Import Project="..\..\Source\EventHorizon\EventHorizon.props" />
 
   <ItemGroup>
     <ProjectReference Include="..\Shared\Shared.csproj" />
+    <ProjectReference Include="..\..\Source\EventHorizon.Abstractions\EventHorizon.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

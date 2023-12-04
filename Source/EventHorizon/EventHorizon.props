@@ -1,0 +1,7 @@
+<Project>
+  <ItemGroup>
+    <CompilerVisibleProperty Include="EventHorizon_ApplicationName" />
+    <CompilerVisibleProperty Include="EventHorizon_Domain" />
+    <CompilerVisibleProperty Include="EventHorizon_GenerateSchema" />
+  </ItemGroup>
+</Project>
